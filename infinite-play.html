@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGuess</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000;
+        }
+        .box{
+            width: 700px;
+            height: 210px;
+            margin: 200px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .box ul{
+            list-style: none;
+            width: 13650px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: play 30s linear infinite;     
+        }
+        .box ul li{          
+            width: 350px;
+            height: 200px;
+            float: left;
+            transition: all 1s;
+            margin-top: 5px;         
+        }
+        .box ul li img{
+            width: 350px;
+            height: 200px;       
+        }
+        @keyframes play{
+           0%{
+            left:0;
+            top: 0;
+           }
+            100%{
+            left: -5950px;
+            top: 0;                
+           }
+        }
+        /* 鼠标悬停时动画停止播放 */
+        .box:hover ul{
+            animation-play-state: paused;
+        }
+        .box:hover li{
+            opacity: 0.6;       
+        }
+        /* 用li: hover不行 */
+        .box ul li:hover{
+            opacity: 1;
+            box-shadow: 0 0 15px rgb(136, 4, 4);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="../image/0.png" alt=""></li>
+            <li><img src="../image/0.5.jpg" alt=""></li>
+            <li><img src="../image/1.jpg" alt=""></li>
+            <li><img src="../image/2.jpg" alt=""></li>
+            <li><img src="../image/3.png" alt=""></li>
+            <li><img src="../image/5.png" alt=""></li>
+            <li><img src="../image/5.5.jpg" alt=""></li>
+            <li><img src="../image/6.jpg" alt=""></li>
+            <li><img src="../image/7.jpg" alt=""></li>
+            <li><img src="../image/8.png" alt=""></li>
+            <li><img src="../image/9.jpg" alt=""></li>
+            <li><img src="../image/10.png" alt=""></li>
+            <li><img src="../image/11.jpg" alt=""></li>
+            <li><img src="../image/13.jpg" alt=""></li>
+            <li><img src="../image/15.jpg" alt=""></li>
+            <li><img src="../image/16.png" alt=""></li>
+            <li><img src="../image/17.jpg" alt=""></li>
+            <li><img src="../image/0.png" alt=""></li>
+            <li><img src="../image/0.5.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
