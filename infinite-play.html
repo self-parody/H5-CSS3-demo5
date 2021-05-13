@@ -62,7 +62,65 @@
             opacity: 1;
             box-shadow: 0 0 15px rgb(136, 4, 4);
         }
+        
+    /* 更省代码的写法：不用定位；但页面中为了不影响其他布局，动画元素一般还是需要使用定位 */
+        /*
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000;
+        }
+        .box{
+            width: 700px;
+            height: 210px;
+            margin: 200px auto;
+            overflow: hidden;
+           
+        }
+        .box ul{
+            list-style: none;
+            width: 13650px;
+            height: 100%;
+           
+            animation: play 30s linear infinite;     
+        }
+        .box ul li{          
+            width: 350px;
+            height: 200px;
+            float: left;
+            transition: all 1s;
+            margin-top: 5px;         
+        }
+        .box ul li img{
+            width: 350px;
+            height: 200px;       
+        }
+        @keyframes play{
+            from{
+                transform: translateX(0px);
+            }
+            to{
+                transform: translateX(-1200px);
+            }
+        }
+      
+        .box:hover ul{
+            animation-play-state: paused;
+        }
+        .box:hover li{
+            opacity: 0.6;       
+        }
+ 
+        .box ul li:hover{
+            opacity: 1;
+            box-shadow: 0 0 15px rgb(136, 4, 4);
+        }
+        */
     </style>
+
 </head>
 <body>
     <div class="box">
