@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+        .box ul{
+            list-style: none;
+            width: 500%;
+            height: 100%;           
+            animation: x 8s infinite;
+        }
+        .box ul li{
+            float: left;
+            width: 20%;
+            height: 100%;
+        }
+        .box ul li img{
+            width: 100%;
+            height: 100%;
+        }
+        @keyframes x{
+            0%{
+               transform: translateX(0); 
+            }
+            10%{
+                transform: translateX(0); 
+            }
+            25%{
+                transform: translateX(-20%); 
+            }
+            35%{
+                transform: translateX(-20%); 
+            }
+            50%{
+                transform: translateX(-40%); 
+            }
+            60%{
+                transform: translateX(-40%);
+            }
+            75%{
+                transform: translateX(-60%); 
+            }
+            85%{
+                transform: translateX(-60%);
+            }
+            100%{
+                transform: translateX(-80%); 
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="images/方1.jpeg" alt=""></li>
+            <li><img src="images/方2.jpeg" alt=""></li>
+            <li><img src="images/方3.jpeg" alt=""></li>
+            <li><img src="images/方5.jpeg" alt=""></li>
+            <li><img src="images/方1.jpeg" alt=""></li>
+
+        </ul>
+        
+    </div>
+</body>
+</html>
