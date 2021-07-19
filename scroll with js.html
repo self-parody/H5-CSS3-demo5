@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: relative;
+        }
+        .box{
+            width: 1000px;
+            height: 200px;
+            position: absolute;
+            left: 50vw;
+            margin-left: -500px;
+            top: 10vh;         
+            overflow: hidden;
+        }      
+        .box ul{
+            list-style: none;           
+            position: absolute;
+        }
+        .box ul li{
+            float: left;
+        }
+        .box ul li img{
+            width: 200px;
+            height: 200px;
+        }
+        .arr-left,.arr-right{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            left: 50vw;
+            margin-left: -600px;
+            top: 18vh;
+            background: url('../image/arrows.jpg') left/cover;
+        }
+        .arr-right{
+            background-position: right;
+            margin-left: 540px;
+        }       
+    </style>
+</head>
+<body>
+    <a href="javascript:;" class="arr-left"></a>
+    <div class="box">
+        <ul>
+            <li><img src="images/方1.jpeg" alt=""></li>
+            <li><img src="images/方2.jpeg" alt=""></li>
+            <li><img src="images/方3.jpeg" alt=""></li>
+            <li><img src="images/方4.jpeg" alt=""></li>
+            <li><img src="images/方5.jpeg" alt=""></li>           
+        </ul>
+    </div>
+    <a href="javascript:;" class="arr-right"></a>
+
+    <script>
+        var box=document.getElementsByTagName('div')[0];
+        var img=document.getElementsByTagName('ul')[0];
+        var lis=document.getElementsByTagName('li');
+        var leftArr=document.getElementsByTagName('a')[0];
+        var rightArr=document.getElementsByTagName('a')[1];
+
+        //通过js添加障眼图
+        img.innerHTML=img.innerHTML+img.innerHTML;
+        //通过js添加ul宽度
+        img.style.width=lis[0].offsetWidth*lis.length+'px';
+        //可通过改变speed变量来控制滚动方向和速度
+        var speed=2;
+      
+        //提取定时器中的滚动函数
+        function move(){
+            //判断过界
+            if(img.offsetLeft<=-img.offsetWidth/2){
+               img.style.left=0;
+            }  
+            //反向
+            if(img.offsetLeft>0){
+                img.style.left=-img.offsetWidth/2+'px';
+            }
+            //默认向左滚动
+            img.style.left=img.offsetLeft-speed+'px';          
+        }
+      
+        //开启定时器
+        var timer=setInterval(move,10);
+      
+        //鼠标移入时清除定时器
+        box.onmouseover=function(){
+            clearInterval(timer);
+        }; 
+        //鼠标移出时再次开启定时器
+        box.onmouseout=function(){
+            timer=setInterval(move,10);
+        };
+      
+        //点击按钮改变滚动方向
+        rightArr.onclick=function(){
+            speed=-2;
+        };
+        leftArr.onclick=function(){
+            speed=2;
+        };
+    </script>
+</body>
+</html>
